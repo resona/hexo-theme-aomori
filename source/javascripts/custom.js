@@ -175,7 +175,7 @@ import { addNewClass, removeClass, throttle } from './class-module'
                         })
                         $('.search-result').html(searchOutputHtml)
                     } else {
-                        $('.search-result').html('Nothing at all.')
+                        $('.search-result').html('什么也没有找到 ╮(╯▽╰)╭')
                     }
                 })
             })
