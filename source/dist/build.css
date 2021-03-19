@@ -9414,6 +9414,7 @@ button {
 	border-radius: 8px;
 	margin-bottom: 20px;
 	padding: 20px;
+	box-shadow: 0 8px 12px var(--color-shadow);
 	position: relative
 }
 
@@ -9727,6 +9728,7 @@ button {
 .comments {
 	background: var(--card-background);
 	border-radius: 8px;
+	box-shadow: 0 8px 12px var(--color-shadow);
 	position: relative
 }
 
