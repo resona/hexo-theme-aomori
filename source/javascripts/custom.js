@@ -118,12 +118,12 @@ import { addNewClass, removeClass, throttle } from './class-module'
                 // 边栏绝对定位
                 addNewClass('.sidebar', 'sidebar-fixed')
                 // 返回顶部按钮显示
-                $('#backtop').fadeIn(300)
+                $('#backtop, #change-mode').fadeIn(300)
             } else {
                 // 取消边栏定位
                 removeClass('.sidebar', 'sidebar-fixed')
                 // 返回顶部按钮消失
-                $('#backtop').fadeOut(300)
+                $('#backtop, #change-mode').fadeOut(300)
             }
         })
     )
