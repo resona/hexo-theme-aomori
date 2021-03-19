@@ -57,6 +57,20 @@
         window.aomori_logo_typed_animated = <%= config.aomori_logo_typed_animated || false %>
         window.aomori_search_algolia = <%= config.aomori_search_algolia || false %>
     </script>
-
+    <script>
+	window.ga_tid="UA-104066300-1",
+	window.ga_api="https://ga.api.xiaolin.in/jquery.js",
+	function(){
+		var e="light";
+		if(localStorage&&localStorage.getItem("theme"))"dark"===localStorage.getItem("theme")&&(e="dark");
+		else{
+			if(!window.matchMedia)return;
+			window.matchMedia("(prefers-color-scheme: dark)").matches&&(e="dark")
+		}
+		"dark"===e&&document.documentElement.setAttribute("data-theme","dark"),
+		window.theme=e
+	}
+	()
+    </script>
     <link rel="stylesheet" type="text/css" href="/assets/waifu.css">
 </head>
