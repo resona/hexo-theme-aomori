@@ -1,13 +1,11 @@
-  <footer class="footer"> 
-   <div class="footer-inner">
-    <div class="footer-info">
-     <span>﹏Resona丶紫珀ζ &copy; 2021</span>
-    </div>
-    <div class="footer-powered">
-     <script async="" src="./﹏Resona丶紫珀ζ_files/busuanzi.pure.mini.js.下载"></script> 
-     <span id="busuanzi_container_site_pv" style="display: inline;">冀ICP备17017688号-本站总访问量<span id="busuanzi_value_site_pv">1030</span>次</span> 
-   </div> 
-  </footer> 
+<footer class="footer"> 
+    <div class="footer-wrap">
+        <div class="footer-inner">
+            <%= config.title %> &copy; <%= date(new Date(), 'YYYY') %><br>
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">冀ICP备17017688号-本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+        </div>
+</footer> 
 
 <% if (config.aomori_gitalk){ %>
 <script src="https://unpkg.zhimg.com/gitalk/dist/gitalk.min.js"></script>

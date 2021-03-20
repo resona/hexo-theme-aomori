@@ -40,7 +40,7 @@
         }
     },
     "mouseover": [
-        { "selector": ".container a[href^='http']", "text": ["要看看 <span style=\"color:#0099cc;\">{text}</span> 么？"] },
+        { "selector": ".article-title a[href^='http']", "text": ["要看看 <span style=\"color:#0099cc;\">{text}</span> 么？"] },
         { "selector": ".fui-home", "text": ["点击前往首页，想回到上一页可以使用浏览器的后退功能哦"] },
         { "selector": ".fui-chat", "text": ["一言一语，一颦一笑。一字一句，一颗赛艇。"] },
         { "selector": ".fui-eye", "text": ["嗯··· 要切换 看板娘 吗？"] },
@@ -50,10 +50,10 @@
         { "selector": ".fui-cross", "text": ["你不喜欢我了吗..."] },
         { "selector": "#tor_show", "text": ["翻页比较麻烦吗，点击可以显示这篇文章的目录呢"] },
         { "selector": "#comment_go", "text": ["想要去评论些什么吗？"] },
-        { "selector": "#night_mode", "text": ["深夜时要爱护眼睛呀"] },
+        { "selector": "#change-mode", "text": ["深夜时要爱护眼睛呀"] },
         { "selector": "#qrcode", "text": ["手机扫一下就能继续看，很方便呢"] },
         { "selector": ".comment_reply", "text": ["要吐槽些什么呢"] },
-        { "selector": ".uk-icon-angle-up", "text": ["回到开始的地方吧"] },
+        { "selector": "#backtop", "text": ["回到开始的地方吧"] },
         { "selector": "#author", "text": ["该怎么称呼你呢"] },
         { "selector": "#email", "text": ["留下你的邮箱，不然就是无头像人士了"] },
         { "selector": "#url", "text": ["你的家在哪里呢，好让我去参观参观"] },
@@ -77,11 +77,12 @@
             "selector": ".waifu #live2d",
             "text": [
                 "是…是不小心碰到了吧",
-                "萝莉控是什么呀",
+                "凝血因子都带上了吗？那我们开工吧!",
                 "那个呢，那个呢，因为出了些状况，施工进度推迟了~",
                 "再摸的话我可要报警了！⌇●﹏●⌇",
                 "不会爱自己的人也没办法爱别人的哦！",
-                "幺幺零吗，这里有个变态一直在摸我(ó﹏ò｡)"
+                "幺幺零吗，这里有个变态一直在摸我(ó﹏ò｡)",
+		"大家要记得跟紧了，不可以擅自行动，还有不可以和其他人吵架"
             ]
         }
     ],

@@ -50,6 +50,7 @@
                 repo: "<%= config.aomori_gitalk.repo %>",
                 owner: "<%= config.aomori_gitalk.owner %>",
                 admin: [<% config.aomori_gitalk.admin.forEach(function(item){%>"<%=item %>",<% }) %>],
+		proxy: "<%= config.aomori_gitalk.proxy %>",
                 distractionFreeMode: <%= config.aomori_gitalk.distractionFreeMode %>  // Facebook-like distraction free mode
             },
             <% } %>
@@ -59,7 +60,7 @@
     </script>
     <script>
 	window.ga_tid="UA-104066300-1",
-	window.ga_api="https://ga.api.xiaolin.in/jquery.js",
+	window.ga_api="/dist/jquery-3.6.0.min.js",
 	function(){
 		var e="light";
 		if(localStorage&&localStorage.getItem("theme"))"dark"===localStorage.getItem("theme")&&(e="dark");
