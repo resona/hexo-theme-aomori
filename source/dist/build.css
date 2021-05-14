@@ -9630,7 +9630,8 @@ button {
 	background: var(--card-background);
 	border-radius: 8px;
 	margin-bottom: 20px;
-	padding: 20px
+	padding: 20px;
+	box-shadow: 0 8px 12px var(--color-shadow)
 }
 
 .archives-wrap .archive-year-wrap {
@@ -9736,7 +9737,7 @@ button {
 	margin-bottom: 60px
 }
 
-.friends .article,.friends-links a {
+friends .article,.friends-links a,.photography-item {
 	background: var(--card-background);
 	border-radius: 8px;
 	margin-bottom: 20px;
@@ -9754,6 +9755,116 @@ button {
 .friends-links a:hover {
 	-webkit-box-shadow: 0 8px 12px var(--color-white);
 	box-shadow: 0 8px 12px var(--color-white)
+}
+
+.photography {
+	padding: 20px 20px 0;
+	border-radius: 8px;
+	background: var(--color-white-light)
+}
+
+.photography .columns {
+	margin-left: -10px;
+	margin-right: -10px
+}
+
+.photography .column {
+	padding-left: 10px;
+	padding-right: 10px
+}
+
+.photography-item {
+	cursor: pointer;
+	overflow: hidden
+}
+
+.photography-item-wrapper {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: 0 0;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+	z-index: 10
+}
+
+.photography-item-place,.photography-item-title {
+	left: 15px;
+	line-height: 20px;
+	-webkit-transition: all .3s ease-in-out;
+	color: var(--color-white-light);
+	position: absolute
+}
+
+.photography-item-wrapper:hover {
+	background: rgba(0,0,0,.5)
+}
+
+.photography-item-title {
+	top: 15px;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	transition: all .3s ease-in-out;
+	z-index: 100
+}
+
+.photography-item-place {
+	bottom: 15px;
+	height: 20px;
+	font-size: 12px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	z-index: 100;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	transition: all .3s ease-in-out
+}
+
+.photography-item-place span {
+	padding-left: 2px
+}
+
+.photography-item-icon {
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+	width: 20px;
+	height: 20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	z-index: 100;
+	border-radius: 50%;
+	background-color: var(--color-white-light)
+}
+
+.photography-item img {
+	width: 100%;
+	height: auto;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out
+}
+
+.photography-item:hover img {
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05)
+}
+
+.photography-item:hover .photography-item-place,.photography-item:hover .photography-item-title {
+	-webkit-transform: scale(1);
+	transform: scale(1)
 }
 
 @media screen and (max-width:600px) {
