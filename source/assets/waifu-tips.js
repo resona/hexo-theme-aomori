@@ -392,7 +392,7 @@ function loadTipsMessage(result) {
             	    if (!empty(result.from)) {
                         var text = waifu_tips.hitokoto_api_message['hitokoto.cn'][0];
                         text = text.render({source: result.from, creator: result.creator});
-                        window.setTimeout(function() {showMessage(text, 3000, true);}, 5000);
+//                        window.setTimeout(function() {showMessage(text, 3000, true);}, 5000);
             	    }
                     showMessage(result.hitokoto, 5000, true);
                 });
