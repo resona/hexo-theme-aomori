@@ -5,6 +5,7 @@
     font-size: 0;
     -webkit-transform: translateY(3px);
     transform: translateY(3px);
+    left:calc((100% - 1460px)/ 2);
 }
 .waifu:hover {
     -webkit-transform: translateY(0);

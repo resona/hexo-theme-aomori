@@ -5485,7 +5485,7 @@ a.text-error:visited {
 }
 
 .hljs-meta,.toc>.toc-list li a {
-	color: #999
+	color: var(--color-white)
 }
 
 .hljs-deletion {
@@ -9131,6 +9131,11 @@ button {
 	padding-top: 70px
 }
 
+.headnav-fix {
+        left:calc((100% - 1260px)/ 2);
+        width: 200px
+}
+
 .tools {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -9671,7 +9676,7 @@ button {
 .footer-inner {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 20px 50px;
+	padding: 0 200px 50px;
 	color: var(--color-white);
 	line-height: 22px;
 	-webkit-user-select: none;
@@ -9939,6 +9944,10 @@ friends .article,.friends-links a,.photography-item {
 		width: 100%
 	}
 
+        .headnav-fix {
+                display: none
+        }
+
 	.archives-wrap,.index,.post {
 		margin-bottom: 20px
 	}
@@ -9947,6 +9956,19 @@ friends .article,.friends-links a,.photography-item {
 @media screen and (max-width:1320px) {
 	.sidebar {
 		right: 0px
+	}
+
+	.headnav-fix {
+		left: 20px
+	}
+
+	.waifu {
+		width: 230px;
+		left:-15px
+	}
+
+	.waifu-tips {
+		width: 230px
 	}
 }
 
