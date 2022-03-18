@@ -1,27 +1,9 @@
-
 <% if (config.aomori_search_algolia){ %>
     <%- partial('_partial/search') %>
 <% } %>
 
-<div class="widget" id="widget" style="height: 335px;">
+<div class="widget" id="widget">
     <% config.aomori_widgets.forEach(function(widget){ %>
       <%- partial('_widget/' + widget) %>
     <% }) %>
-</div>
-
-<div class="widget ps" id="widget">
-
-  <div class="widget-wrap widget-archive">
-    <div style="text-align: center;"><span><img src="/images/avatar_all.jpg" alt="Yuhang Zheng" style="width: 240px;height: 339px;"></span></div>
-  </div>
-
-</div>
-
-<div class="tools">
-    <div id="backtop" style="display: none;">
-        <i class="icon icon-arrow-up"></i>
-    </div>
-    <div id="change-mode" style="display: block;">
-        <i class="icon icon-time"></i>
-    </div>
 </div>

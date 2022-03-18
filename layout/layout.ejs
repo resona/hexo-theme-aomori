@@ -13,9 +13,27 @@
             </section>
 
             <% if (page.sidebar !== false){ %>
-            <aside class="sidebar <% if (config.aomori_search_algolia){ %>sidebar-search-fix<% } %>">
+            <aside class="sidebar <% if (config.aomori_search_algolia){ %>sidebar-search-fix<% } %>" style="position: absolute; top: 0px;">
                 <%- partial('_partial/sidebar') %>
             </aside>
+
+            <aside class="sidebar" style="left:calc((100% - 1260px)/ 2);width: 200px;">
+              <div class="widget ps" id="widget">
+                <div class="widget-wrap widget-archive">
+                  <div style="text-align: center;"><span><img src="/images/avatar_all.jpg" alt="Yuhang Zheng" style="width: 160px;height: 226px;"></span></div>
+                </div>
+              </div>
+             <div class="tools">
+               <div id="backtop" style="display: none;">
+                 <i class="icon icon-arrow-up"></i>
+               </div>
+               <div id="change-mode" style="display: block;">
+                 <i class="icon icon-time"></i>
+               </div>
+             </div>
+
+            </aside>
+
             <% } %>
         </div>
     </div>
