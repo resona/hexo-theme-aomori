@@ -48,6 +48,7 @@
 }
 .waifu #live2d{
     position: relative;
+    filter: var(--brightness-live2d);
 }
 
 @keyframes shake {

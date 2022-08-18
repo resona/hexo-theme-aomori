@@ -64,6 +64,7 @@ ol,ol ol,ol ul,ul,ul ol,ul ul {
 }
 
 :root {
+	--brightness-live2d: brightness(100%);
 	--body-background: #f0f3f6;		/*网页背景*/
 	--color-primary: #119da4;		/*时间，标签，分类中间的小杠杠*/
 	--color-main: #13505b;			/*鼠标指向标签时的颜色*/
@@ -97,6 +98,7 @@ ol,ol ol,ol ul,ul,ul ol,ul ul {
 	-webkit-appearance: textfield;
 	outline-offset: -2px
 }[data-theme=dark] {
+	--brightness-live2d: brightness(70%);
 	--body-background: #424242;
 	--card-background: #353535;
 	--footer-background: var(--card-background);
