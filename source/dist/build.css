@@ -8916,6 +8916,12 @@ button {
 .main .inner {
 	padding-right: 260px;
 	padding-left: 220px;
+	padding-bottom: 20px;
+}
+
+.message{
+	padding-right: 260px;
+	padding-left: 220px;
 }
 
 .main .inner .inner-main {
@@ -9874,7 +9880,7 @@ friends .article,.friends-links a,.photography-item {
 	transform: scale(1)
 }
 
-@media screen and (max-width:850px) {
+@media screen and (max-width:970px) {
 	.footer .footer-inner,.index .article .article-inner {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal
@@ -9933,6 +9939,12 @@ friends .article,.friends-links a,.photography-item {
 	.main .inner {
 		padding-right: 0;
 		padding-left: 0
+	}
+
+	.message {
+		padding-right: 0;
+		padding-left: 0;
+		padding-bottom: 20px
 	}
 
 	.sidebar {

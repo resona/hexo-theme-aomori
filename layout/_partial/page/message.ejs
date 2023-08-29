@@ -1,0 +1,36 @@
+<% if (post.content){ %>
+<article
+  id="<%= post.layout %>-<%= post._id %>"
+  class="article article-type-<%= post.layout %>"
+>
+    <div class="article-inner">
+        <div class="article-entry post-inner-html">
+            <%- post.content %>
+        </div>
+    </div>
+</article>
+<% } %>
+
+<section class="comments">
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <div id="vcomments"></div>
+    <style>
+	
+        .v[data-class=v] .vinput, .v[data-class=v] .veditor, .v[data-class=v] p, .v[data-class=v] pre code, .v[data-class=v] .status-bar {color: var(--text);}
+    </style>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'iAfamu15fjUevVoDQomulYyj-gzGzoHsz',
+            appKey: '0tq7jMlUREKwpzcGqS9bjpwm',
+            avatar: 'monsterid',
+            placeholder: "黎明时分有梦将醒，青春如一片落叶逐水飘零 ..."
+        })
+    </script>
+</section>
+
+<style>
+.main .inner {
+    padding: 0;
+}
+</style>
