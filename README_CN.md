@@ -3,14 +3,19 @@
 ![Required Node version](https://img.shields.io/node/v/hexo)
 ![Action](https://github.com/lh1me/hexo-theme-aomori/workflows/Action/badge.svg)
 ![License](https://img.shields.io/github/license/lh1me/hexo-theme-aomori.svg)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 <br/>
 
-![image](https://raw.githubusercontent.com/lh1me/hexo-theme-aomori/master/docs/cover.jpg)
+![image](https://raw.githubusercontent.com/lh1me/hexo-theme-aomori/master/docs/cover.png)
 
 # Aomori
 
-Hexo 是一款快速、简洁且高效的博客框架，拥有超快生成速度，支持 Markdown，一键部署和高度可扩展性。本项目是基于 Hexo 一系列优势所开发出来的一款主题，主题特性如下
+Hexo 是一款快速、简洁且高效的博客框架，拥有超快生成速度，支持 Markdown，一键部署和高度可扩展性。
+
+Aomori 是基于 Hexo 一系列优势所开发出来的一款主题，主题的的理念是希望博主能更专注于生产内容，读者能更专注于接收信息。
+
+Aomori 提供了很多支撑其理念的特性，如：
 
 - 丰富的网站样式
 - 丰富的主题配置
@@ -100,9 +105,9 @@ aomori_copyright: true # or false
 ``` yml
 aomori_social:
   -
-    icon:
-    type:
-    url:
+    icon: # 图标 name 字段
+    type: # 图标 type 字段
+    url: # 你的社交媒体链接
   -
     icon:
     type:
@@ -127,12 +132,28 @@ aomori_baidu_analytics: ''
 aomori_google_analytics: 'UA-XXXXX-X'
 ```
 
+#### Google Site Verification
+
+``` yml
+aomori_google_site:
+  enable: true
+  id: XXX
+```
+
 #### 不蒜子 统计
 
 由 [不蒜子](https://busuanzi.ibruce.info/) 提供的计数服务
 
 ``` yml
 aomori_busuanzi: true
+```
+
+#### Emoji Favicon
+
+在 Favicon 显示 Emoji
+
+``` yml
+aomori_favicon: 🎮
 ```
 
 ---
@@ -187,6 +208,8 @@ link_reprint:
     title: title
 ```
 
+配置后文章列表将会显示徽章提示。
+
 #### 参考链接
 
 可配多条
@@ -217,7 +240,25 @@ npm i hexo-generator-index -S
 sticky: 100
 ```
 
-更多使用方法 [点击查看](https://github.com/hexojs/hexo-generator-index)
+更多使用方法 [点击查看](https://github.com/hexojs/hexo-generator-index)。
+
+配置后文章列表将会显示徽章提示。
+
+#### Video
+
+我们对文章内容里面的视频做了优化处理，你只需要在写文章的时候直接使用 HTML 的 Video 标签 `<video src="xxx"/>` 即可。
+
+---
+
+## 页面可选功能
+
+配置文件：页面头部
+
+#### 隐藏侧边栏
+
+```
+sidebar: false
+```
 
 ---
 
@@ -245,7 +286,28 @@ layout: tweet
 aomori_disqus_shortname: ''
 ```
 
+#### DisqusJS
+
+使用 DisqusJS 搭配 Disqus API 在中国大陆访问会更加友好
+
+配置字段详情参照 [https://github.com/SukkaW/DisqusJS](https://github.com/SukkaW/DisqusJS)
+
+``` yml
+aomori_disqusjs:
+  enable: true
+  shortname: ""
+  siteName: ""
+  api: ""
+  apikey: ""
+  nesting: 4
+  nocomment: "这里冷冷清清的，一条评论都没有"
+  admin: ""
+  adminLabel: ""
+```
+
 #### Gitalk
+
+配置字段详情参照 [https://github.com/gitalk/gitalk](https://github.com/gitalk/gitalk)
 
 ``` yml
 aomori_gitalk:
@@ -260,11 +322,83 @@ aomori_gitalk:
   distractionFreeMode: true // Facebook-like distraction free mode
 ```
 
+#### Valine
+
+配置字段详情参照 [https://valine.js.org/](https://valine.js.org/configuration.html)
+
+``` yml
+aomori_valine:
+  // 必填配置
+  enable: true
+  appId: ''
+  appKey: ''
+  // 以下为选填配置
+  placeholder: 'Hello World!'
+  avatar: ''
+  pageSize: 10
+  lang: 'zh-CN'
+  visitor: false
+  highlight: false
+  recordIP: false
+  emojiCDN: ''
+  enableQQ: false
+  requiredFields:
+```
+
+#### Remark42
+
+配置字段详情参照 [https://github.com/umputun/remark42](https://github.com/umputun/remark42)
+
+``` yml
+aomori_remark42:
+  enable: true
+  host: ''
+  site_id: ''
+  max_shown_comments: 10
+  theme: "light"
+  locale: "en"
+  show_email_subscription: false
+```
+
+#### Giscus
+
+配置字段详情参照 [https://giscus.app](https://giscus.app)
+
+``` yml
+aomori_giscus:
+  repo: ''
+  repoId: ''
+  category: ''
+  categoryId: 10
+  mapping: "pathname"
+  reactionsEnabled: 1
+  emitMetadata: 0
+  theme: 'light'
+  lang: 'zh-CN'
+```
+
 ---
 
 ## 页面
 
-#### 友情链接
+#### 默认页面
+
+1. 首先创建页面
+
+```
+hexo new page xxx
+```
+
+2. 前往 `source/xxx/index.md`，文件，设置 `Front-matter`
+
+```
+title:
+comment: true # or false
+```
+
+设置 `comment` 为 `true` 会打开页面的评论功能
+
+#### 友情链接页面
 
 1. 首先创建页面
 
@@ -272,7 +406,7 @@ aomori_gitalk:
 hexo new page friends
 ```
 
-2. 前往 `source/friends/index.md` 文件，设置 Front-matter
+2. 前往 `source/friends/index.md` 文件，设置 `Front-matter`
 
 ```
 title: 友情链接 # 文章标题
@@ -297,6 +431,62 @@ comment: true # 是否需要评论 true: 是 false: 否
   ...
 ]
 ```
+
+#### 摄影/图像作品展示
+
+1. 首先创建页面
+
+```
+hexo new page photography
+```
+
+2. 前往 `source/photography/index.md` 文件，设置 `Front-matter`
+
+```
+title: 我的摄影 # 文章标题
+layout: photography
+sidebar: false
+```
+
+3. 创建数据，参照 [数据文件夹](https://hexo.io/zh-cn/docs/data-files)
+
+4. 创建 `source/_data/photography.json`，格式如下
+
+```
+[
+    {
+        "thumbnail": "https://thumbnail.jpg",
+        "photo": "https://photo.jpg",
+        "title": "This is title.",
+        "icon": {
+            "name": "unsplash",
+            "type": "logo",
+            "url": "https://linhong.me"
+        },
+        "place": "China"
+    },
+    {
+        "thumbnail": "https://thumbnail.jpg",
+        "photo": "https://photo.jpg",
+        "title": "This is title.",
+        "icon": {
+            "name": "unsplash",
+            "type": "logo",
+            "url": "https://linhong.me"
+        },
+        "place": "China"
+    },
+    ...
+]
+```
+
+`thumbnail` 缩略图
+
+`photo` 原图
+
+`icon` 字段参数基于 [Boxicons](https://boxicons.com/)
+
+`place` 地区
 
 ---
 
@@ -347,3 +537,7 @@ Enjoy.
 # Copyright & License
 
 Copyright (c) 2020 LIN HONG - Released under the [MIT license](LICENSE).
+
+# Thanks
+
+[HostSencillo](https://my.hostsencillo.com/cart) Provides an excellent VPS service.

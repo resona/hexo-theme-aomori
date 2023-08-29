@@ -4,14 +4,19 @@
 ![Required Node version](https://img.shields.io/node/v/hexo)
 ![Action](https://github.com/lh1me/hexo-theme-aomori/workflows/Action/badge.svg)
 ![License](https://img.shields.io/github/license/lh1me/hexo-theme-aomori.svg)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 <br/>
 
-![image](https://raw.githubusercontent.com/lh1me/hexo-theme-aomori/master/docs/cover.jpg)
+![image](https://raw.githubusercontent.com/lh1me/hexo-theme-aomori/master/docs/cover.png)
 
 # Aomori
 
-Hexo is a fast, simple, powerful blog framework, with ultra-fast generation speed, support for Markdown, one-click deployment and high scalability. This project is a theme developed based on a series of advantages of Hexo.
+Hexo is a fast, simple, powerful blog framework, with ultra-fast generation speed, support for Markdown, one-click deployment and high scalability. 
+
+Aomori is a theme developed based on a series of advantages of Hexo. The idea of the theme is to hope that bloggers can focus more on producing content and readers can focus more on receiving information.
+
+Aomori provides many features that support its concept.
 
 - Rich Website Style
 - Rich Theme Configuration
@@ -101,9 +106,9 @@ aomori_copyright: true # or false
 ``` yml
 aomori_social:
   -
-    icon:
-    type:
-    url:
+    icon: # Boxicons name
+    type: # Boxicons type
+    url: # Your social link
   -
     icon:
     type:
@@ -128,12 +133,38 @@ aomori_baidu_analytics: ''
 aomori_google_analytics: 'UA-XXXXX-X'
 ```
 
+#### Google Site Verification
+
+``` yml
+aomori_google_site:
+  enable: true
+  id: XXX
+```
+
 #### Busuanzi Count
 
 Counting service provided by [Busuanzi](https://busuanzi.ibruce.info/)
 
 ``` yml
 aomori_busuanzi: true
+```
+
+#### Emoji Favicon
+
+``` yml
+aomori_favicon: 🎮
+```
+
+---
+
+## Page Features
+
+Configuration in the page's `Front-matter`
+
+#### Hidden Sidebar
+
+```
+sidebar: false
 ```
 
 ---
@@ -184,6 +215,8 @@ link_reprint:
     title: title
 ```
 
+This configuration will show the badge on the homepage.
+
 #### Reference Link
 
 ``` yml
@@ -212,6 +245,12 @@ sticky: 100
 
 More ways to use [hexo-generator-index](https://github.com/hexojs/hexo-generator-index)
 
+This configuration will show the badge on the homepage.
+
+#### Video
+
+We have optimized the video in the content of the article, you only need to directly use the `HTML Video Tag` like `<video src="xxx"/>` when writing the article.
+
 ---
 
 ## Article Style
@@ -238,7 +277,28 @@ Input Disqus ID
 aomori_disqus_shortname: ''
 ```
 
+#### DisqusJS
+
+Using DisqusJS with Disqus API to visit in China will be more friendly.
+
+Configuration details [https://github.com/SukkaW/DisqusJS](https://github.com/SukkaW/DisqusJS)
+
+``` yml
+aomori_disqusjs:
+  enable: true
+  shortname: ""
+  siteName: ""
+  api: ""
+  apikey: ""
+  nesting: 4
+  nocomment: "这里冷冷清清的，一条评论都没有"
+  admin: ""
+  adminLabel: ""
+```
+
 #### Gitalk
+
+Configuration details [https://github.com/gitalk/gitalk](https://github.com/gitalk/gitalk)
 
 ``` yml
 aomori_gitalk:
@@ -253,11 +313,83 @@ aomori_gitalk:
   distractionFreeMode: true // Facebook-like distraction free mode
 ```
 
+#### Valine
+
+Configuration details [https://valine.js.org/](https://valine.js.org/configuration.html)
+
+``` yml
+aomori_valine:
+  // Required
+  enable: true
+  appId: ''
+  appKey: ''
+  // Optional
+  placeholder: 'Hello World!'
+  avatar: ''
+  pageSize: 10
+  lang: 'zh-CN'
+  visitor: false
+  highlight: false
+  recordIP: false
+  emojiCDN: ''
+  enableQQ: false
+  requiredFields:
+```
+
+#### Remark42
+
+Configuration details [https://github.com/umputun/remark42](https://github.com/umputun/remark42)
+
+``` yml
+aomori_remark42:
+  enable: true
+  host: ''
+  site_id: ''
+  max_shown_comments: 10
+  theme: "light"
+  locale: "en"
+  show_email_subscription: false
+```
+
+#### Giscus
+
+Configuration details [https://giscus.app](https://giscus.app)
+
+``` yml
+aomori_giscus:
+  repo: ''
+  repoId: ''
+  category: ''
+  categoryId: 10
+  mapping: "pathname"
+  reactionsEnabled: 1
+  emitMetadata: 0
+  theme: 'light'
+  lang: 'zh-CN'
+```
+
 ---
 
 ## Page
 
-#### Friends Links
+#### Default Page
+
+1. First create the page,
+
+```
+hexo new page xxx
+```
+
+2. Go to `source/xxx/index.md`，Set up `Front-matter`
+
+```
+title:
+comment: true # or false
+```
+
+Setting the `comment` to `true` will open the comment plugin of the page
+
+#### Friends Links Page
 
 1. First create the page,
 
@@ -290,6 +422,62 @@ comment: true # or false
   ...
 ]
 ```
+
+#### Photography Page
+
+1. First create the page,
+
+```
+hexo new page photography
+```
+
+2. Go to `source/photography/index.md`，Set up `Front-matter`
+
+```
+title:
+layout: photography
+sidebar: false
+```
+
+3. Create data, refer to [Data Files](https://hexo.io/zh-cn/docs/data-files)
+
+4. Create `source/_data/photography.json`，The format is as follows
+
+```
+[
+    {
+        "thumbnail": "https://thumbnail.jpg",
+        "photo": "https://photo.jpg",
+        "title": "This is title.",
+        "icon": {
+            "name": "unsplash",
+            "type": "logo",
+            "url": "https://linhong.me"
+        },
+        "place": "China"
+    },
+    {
+        "thumbnail": "https://thumbnail.jpg",
+        "photo": "https://photo.jpg",
+        "title": "This is title.",
+        "icon": {
+            "name": "unsplash",
+            "type": "logo",
+            "url": "https://linhong.me"
+        },
+        "place": "China"
+    },
+    ...
+]
+```
+
+`thumbnail` Thumbnail photo
+
+`photo` Original Photo
+
+`icon` field is base on [Boxicons](https://boxicons.com/)
+
+`place` Place
 
 ---
 
@@ -335,4 +523,8 @@ Enjoy.
 
 # Copyright & License
 
-Copyright (c) 2020 LIN HONG - Released under the [MIT license](LICENSE).
+Copyright (c) 2020 - 2021 LIN HONG - Released under the [MIT license](LICENSE).
+
+# Thanks
+
+[HostSencillo](https://my.hostsencillo.com/cart) Provides an excellent VPS service.
