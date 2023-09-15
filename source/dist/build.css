@@ -8753,7 +8753,6 @@ button {
 .header .header-menu-inner a:active,.header .header-menu-inner a:hover {
 /* letter-spacing:1px */
 	background: var(--card-background);
-	box-shadow: 0 8px 12px var(--color-shadow);
 }
 
 .header .header-menu-inner a::after,.header .header-menu-inner a::before {
@@ -9040,7 +9039,6 @@ button {
 	margin-bottom: 20px;
 	overflow-y: scroll;
 	padding: 20px;
-	box-shadow: 0 8px 12px var(--color-shadow)
 }
 
 .sidebar .widget .widget-wrap:first-child {
@@ -9148,11 +9146,6 @@ button {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex
-}
-
-.index .article, .tools div, .search {
-	-webkit-box-shadow: 0 8px 12px var(--color-shadow);
-	box-shadow: 0 8px 12px var(--color-shadow)
 }
 
 #backtop,#change-mode {
@@ -9426,7 +9419,6 @@ button {
 	border-radius: 8px;
 	margin-bottom: 20px;
 	padding: 20px;
-	box-shadow: 0 8px 12px var(--color-shadow);
 	position: relative
 }
 
@@ -9643,7 +9635,6 @@ button {
 	border-radius: 8px;
 	margin-bottom: 20px;
 	padding: 20px;
-	box-shadow: 0 8px 12px var(--color-shadow)
 }
 
 .archives-wrap .archive-year-wrap {
@@ -9713,7 +9704,6 @@ button {
 	padding: 10px;
 	margin: 0 5px;
 	background: var(--card-background);
-	box-shadow: 0 8px 12px var(--color-shadow);
 	border-radius: 8px
 }
 
@@ -9741,7 +9731,6 @@ button {
 .comments {
 	background: var(--card-background);
 	border-radius: 8px;
-	box-shadow: 0 8px 12px var(--color-shadow);
 	position: relative
 }
 
@@ -9753,7 +9742,6 @@ friends .article,.friends-links a,.photography-item {
 	background: var(--card-background);
 	border-radius: 8px;
 	margin-bottom: 20px;
-	box-shadow: 0 8px 12px var(--color-shadow);
 	position: relative
 }
 
@@ -9766,7 +9754,6 @@ friends .article,.friends-links a,.photography-item {
 
 .friends-links a:hover {
 	-webkit-box-shadow: 0 8px 12px var(--color-white);
-	box-shadow: 0 8px 12px var(--color-white)
 }
 
 .photography {
