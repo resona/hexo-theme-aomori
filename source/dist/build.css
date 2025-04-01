@@ -9873,7 +9873,7 @@ friends .article,.friends-links a,.photography-item {
 	transform: scale(1)
 }
 
-@media screen and (max-width:970px) {
+@media screen and (max-width:780px) {
 	.footer .footer-inner,.index .article .article-inner {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal
