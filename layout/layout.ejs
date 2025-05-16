@@ -1,97 +1,105 @@
-<%- partial('_partial/head') %>
+<!DOCTYPE html>
+<html>
+  <%- partial('_partial/head') %>
 
-<body>
-
+  <body>
     <%- partial('_partial/header') %>
 
     <div class="container">
-        <div class="main">
-            <section class="inner">
-                <section class="inner-main">
-                    <%- body %>
-                </section>
-            </section>
+      <div class="main">
+        <section class="inner">
+          <section class="inner-main">
+            <%- body %>
+          </section>
+        </section>
 
-            <% if (page.sidebar !== false){ %>
-            <aside class="sidebar <% if (config.aomori_search_algolia){ %>sidebar-search-fix<% } %>" style="position: absolute; top: 0px;">
-                <%- partial('_partial/sidebar') %>
+        <% if (page.sidebar !== false) { %>
+          <% if (is_post()) { %>
+            <aside class="sidebar <% if (config.aomori_search_algolia) { %>sidebar-search-fix<% } %>">
+              <%- partial('_partial/sidebar') %>
             </aside>
+          <% } else { %>
+            <aside class="sidebar <% if (config.aomori_search_algolia) { %>sidebar-search-fix<% } %>" style="position: absolute; top: 10px;">
+              <%- partial('_partial/sidebar') %>
+            </aside>
+          <% } %>
 
-            <aside class="sidebar headnav-fix">
-              <div class="widget ps" id="widget">
-                <div class="widget-wrap widget-archive">
-                  <div style="text-align: center;"><span><img src="/images/avatar_all.jpg" alt="Yuhang Zheng" style="width: 160px;height: 226px;"></span></div>
+          <aside class="sidebar headnav-fix">
+            <div class="widget ps" id="widget">
+              <div class="widget-wrap widget-archive">
+                <div style="text-align: center;">
+                  <span>
+                    <img src="/images/avatar_all.jpg" alt="Yuhang Zheng" style="width: 160px; height: 226px;">
+                  </span>
                 </div>
               </div>
+            </div>
 
-<div class="widget ps" id="widget" style="padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;">
-<div id="app"></div>
-<!-- 加载 cplayer 脚本 -->
-<script>
-  let player = new cplayer({
-    width: '200',
-    big: true,
-    showPlaylist: false,
-    showPlaylistButton: false,
-    element: document.getElementById('app'),
-    playlist: [
-      {
-        src: '/music/xjy.mp3',
-        poster: 'https://p2.music.126.net/_UOvA4pi5_iXGuoOZ4C7gQ==/109951163127455257.jpg',
-        name: '仙居谣',
-        artist: '逸恋仙居'
-      },
-      {
-        src: '/music/smgz.mp3',
-        poster: 'https://p1.music.126.net/iJ-h2ygECtKuzITTh9wqYQ==/17934134160859736.jpg',
-        name: '世末歌者',
-        artist: '双笙'
-      },
-      {
-        src: '/music/jjbsy.mp3',
-        poster: 'https://p2.music.126.net/0KcMYyKmWR-6eCkR8znePw==/18198016951567516.jpg',
-        name: '九九八十一',
-        artist: '乐正绫 / 洛天依'
-      },
-      {
-        src: '/music/srnl.mp3',
-        poster: 'https://p1.music.126.net/hzlpZj9bzwyk1b0g7Deo0A==/109951163335209234.jpg',
-        name: '生如逆旅',
-        artist: '圈9'
-      },
-      {
-        src: '/music/zlyb.mp3',
-        poster: 'https://p1.music.126.net/2BqhuG80pPX44zKZXTUEXQ==/109951163097371954.jpg',
-        name: '再来一杯',
-        artist: 'BiliBili'
-      },
-      {
-        src: '/music/cgyygy.mp3',
-        poster: 'https://p1.music.126.net/a61wnSbpl7iz4juzmlq-gA==/6641050233030998.jpg',
-        name: '唱给雅音宫羽·终',
-        artist: '純白P / 洛天依'
-      }
-    ]
-  })
-</script>
-</div>
-             <div class="tools">
-               <div id="backtop" style="display: none;">
-                 <i class="icon icon-arrow-up"></i>
-               </div>
-               <div id="change-mode" style="display: block;">
-                 <i class="icon icon-time"></i>
-               </div>
-             </div>
+            <div class="widget ps" id="widget" style="padding: 0;">
+              <div id="app"></div>
+              <!-- 加载 cplayer 脚本 -->
+              <script>
+                let player = new cplayer({
+                  width: '200',
+                  big: true,
+                  showPlaylist: false,
+                  showPlaylistButton: false,
+                  element: document.getElementById('app'),
+                  playlist: [
+                    {
+                      src: '/music/xjy.mp3',
+                      poster: 'https://p2.music.126.net/_UOvA4pi5_iXGuoOZ4C7gQ==/109951163127455257.jpg',
+                      name: '仙居谣',
+                      artist: '逸恋仙居'
+                    },
+                    {
+                      src: '/music/smgz.mp3',
+                      poster: 'https://p1.music.126.net/iJ-h2ygECtKuzITTh9wqYQ==/17934134160859736.jpg',
+                      name: '世末歌者',
+                      artist: '双笙'
+                    },
+                    {
+                      src: '/music/jjbsy.mp3',
+                      poster: 'https://p2.music.126.net/0KcMYyKmWR-6eCkR8znePw==/18198016951567516.jpg',
+                      name: '九九八十一',
+                      artist: '乐正绫 / 洛天依'
+                    },
+                    {
+                      src: '/music/srnl.mp3',
+                      poster: 'https://p1.music.126.net/hzlpZj9bzwyk1b0g7Deo0A==/109951163335209234.jpg',
+                      name: '生如逆旅',
+                      artist: '圈9'
+                    },
+                    {
+                      src: '/music/zlyb.mp3',
+                      poster: 'https://p1.music.126.net/2BqhuG80pPX44zKZXTUEXQ==/109951163097371954.jpg',
+                      name: '再来一杯',
+                      artist: 'BiliBili'
+                    },
+                    {
+                      src: '/music/cgyygy.mp3',
+                      poster: 'https://p1.music.126.net/a61wnSbpl7iz4juzmlq-gA==/6641050233030998.jpg',
+                      name: '唱给雅音宫羽·终',
+                      artist: '純白P / 洛天依'
+                    }
+                  ]
+                });
+              </script>
+            </div>
 
-            </aside>
-
-            <% } %>
-        </div>
+            <div class="tools">
+              <div id="backtop" style="display: none;">
+                <i class="icon icon-arrow-up"></i>
+              </div>
+              <div id="change-mode" style="display: block;">
+                <i class="icon icon-time"></i>
+              </div>
+            </div>
+          </aside>
+        <% } %>
+      </div>
     </div>
 
     <%- partial('_partial/footer') %>
-
-</body>
-
+  </body>
 </html>

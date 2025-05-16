@@ -1,9 +1,21 @@
-<% if (config.aomori_search_algolia){ %>
-    <%- partial('_partial/search') %>
+<% if (is_post()){ %>
+    <%# On post pages, only show search and TOC %>
+    <% if (config.aomori_search_algolia){ %>
+        <%- partial('_partial/search') %>
+    <% } %>
+    <div class="widget widget-post-sidebar">
+        <%- partial('_widget/toc') %>
+    </div>
+<% } else { %>
+    <%# On other pages, show search and all configured widgets %>
+    <% if (config.aomori_search_algolia){ %>
+        <%- partial('_partial/search') %>
+    <% } %>
+    <div class="widget" id="widget">
+        <% if (typeof config.aomori_widgets !== 'undefined' && config.aomori_widgets && Array.isArray(config.aomori_widgets)) { %>
+            <% config.aomori_widgets.forEach(function(widget){ %>
+                <%- partial('_widget/' + widget) %>
+            <% }) %>
+        <% } %>
+    </div>
 <% } %>
-
-<div class="widget" id="widget">
-    <% config.aomori_widgets.forEach(function(widget){ %>
-      <%- partial('_widget/' + widget) %>
-    <% }) %>
-</div>

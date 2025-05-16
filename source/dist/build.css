@@ -8936,8 +8936,8 @@ button {
 	position: fixed;
 	right: calc((100% - 1260px)/ 2);
 	top: 120px;
-	/* -webkit-transition: all .2s; */
-	/* transition: all .2s; */
+	-webkit-transition: all .2s;
+	transition: all .2s;
 	width: 240px
 }
 
