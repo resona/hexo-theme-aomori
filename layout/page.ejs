@@ -17,6 +17,12 @@
   <%- partial(`_partial/page/${page.layout}`, {post: page, index: false}) %>
 </div>
 
+<% } else if (page.layout === 'live_streams') { %>
+
+<div class="<%= page.layout %>">
+  <%- partial(`_partial/page/${page.layout}`, {post: page, index: false}) %>
+</div>
+
 <% } else { %>
 
 <div class="<%= page.layout %>">

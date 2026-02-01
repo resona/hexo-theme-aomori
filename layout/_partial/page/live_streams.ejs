@@ -1,0 +1,22 @@
+<% if (post.content){ %>
+<article
+  id="<%= post.layout %>-<%= post._id %>"
+  class="article article-type-<%= post.layout %>"
+>
+    <div class="article-inner">
+        <div class="article-entry post-inner-html">
+            <%- post.content %>
+        </div>
+    </div>
+</article>
+<% } %>
+
+<section class="comments">
+	<iframe width="100%" height="686px" src="https://host.resona.top:5081/LiveApp/play.html?id=insta360x5" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<style>
+.main .inner {
+    padding: 0;
+}
+</style>
